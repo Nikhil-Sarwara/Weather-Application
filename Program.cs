@@ -21,10 +21,7 @@ public abstract class Program
         app.UseStaticFiles();
         app.UseRouting();
 
-
-        app.MapControllerRoute(
-            "default",
-            "{controller}/{action=Index}/{id?}");
+        app.MapControllers();
 
         app.MapFallbackToFile("index.html");
 
