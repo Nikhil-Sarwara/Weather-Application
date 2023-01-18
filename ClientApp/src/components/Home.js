@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import {Flex, Text} from "@chakra-ui/react";
+import {Flex} from "@chakra-ui/react";
 import {UserProfile} from "./UserProfile";
 import {SearchBar} from "./SearchBar";
 import {SearchContext, SearchContextProvider} from "./SearchContextProvider";
-import {CityBox} from "./CityBox";
+import {SearchDisplay} from "./SearchDisplay";
 
 export class Home extends Component {
     static displayName = Home.name;
@@ -35,29 +35,9 @@ export class Home extends Component {
                                         <SearchBar/>
                                     </Flex>
 
-                                    {/* Main Display */}
-                                    <Flex height={"100%"} width={"100%"} bgColor={"gray.700"} marginTop={"2rem"}
-                                          rounded={"3xl"} overflow={"auto"}>
-                                        {/* Display Text */}
-                                        {context.searchQuery === "None" ? 
-                                            <Text color={"white"} fontSize={"4rem"} fontWeight={"thin"} margin={"auto"}>
-                                                {this.state.displayText}
-                                            </Text>
-                                             :
-                                            (Array.isArray(context.searchResult) && context.searchResult.length > 0 ?
-                                                    (<Flex>
-                                                        <CityBox cities={context.searchResult}/>
-                                                    </Flex>)
-                                                    :
-                                                    <Text color={"white"} fontSize={"2rem"} fontWeight={"thin"} margin={"auto"}>
-                                                        No results found.
-                                                    </Text>
-                                            )
-                                        }
-                                    </Flex>
+                                    <SearchDisplay search={context}/>
                                 </Flex>
-                            </Flex>
-                        )
+                            </Flex>)
                     }}
                 </SearchContext.Consumer>
             </SearchContextProvider>

@@ -4,6 +4,11 @@ import {FaMapMarkerAlt} from "react-icons/fa";
 
 export class CityBox extends Component {
     
+    // function to handle click event of one city
+    handleClick = (city) => {
+        this.props.onCityClick(city);
+    }
+
     render() {
         return(
             <Flex justifyContent="center" padding={"1rem"} overflow={"auto"}>
@@ -19,6 +24,7 @@ export class CityBox extends Component {
                             padding="1rem"
                             rounded="3xl"
                             boxShadow="md"
+                            onClick={() => this.handleClick(city)}
                         >
                             <FaMapMarkerAlt size={24} color="white" />
                             <VStack alignItems="start" spacing={0} flex="1" marginX={"1rem"}>
