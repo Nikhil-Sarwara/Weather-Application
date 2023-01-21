@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 namespace Weather_Application.Controllers
 {
     [ApiController]
-    [Route("[controller]")] // api/city[]
+    [Route("[controller]")] 
     public class CityController : ControllerBase
     {
         private readonly ILogger<CityController> _logger;
