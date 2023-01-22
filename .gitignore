@@ -24,6 +24,8 @@ Bin/
 obj/
 Obj/
 
+*/.env
+
 # Visual Studio 2015 cache/options directory
 .vs/
 /wwwroot/dist/
@@ -181,6 +183,8 @@ ClientBin/
 orleans.codegen.cs
 
 /node_modules
+
+.idea/*
 
 # RIA/Silverlight projects
 Generated_Code/
