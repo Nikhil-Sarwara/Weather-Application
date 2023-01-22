@@ -14,7 +14,6 @@ export class UserProfile extends Component {
         return (
             <Flex rounded={"3xl"} padding={"1rem"} bgColor={"gray.100"} height={"max-content"}>
                 {/* User Selection */}
-
                 {/* User Icon*/}
                 <Image src={this.state.currentUser && this.state.currentUser.iconUrl} width={"2rem"} height={"2rem"} margin={"auto"} rounded={"3xl"}></Image>
                 
@@ -33,7 +32,7 @@ export class UserProfile extends Component {
                     <Text fontSize={"large"} marginLeft={"1rem"}>
                         {
                             //     get current dateitme
-                            new Intl.DateTimeFormat('en-GB', { dateStyle: 'full', timeStyle: 'short' }).format(new Date())
+                            new Intl.DateTimeFormat('en-GB', { dateStyle: 'full' }).format(new Date())
                         }
                     </Text> 
                 </Flex>
