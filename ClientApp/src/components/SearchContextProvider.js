@@ -7,6 +7,7 @@ const SearchContextProvider = ({ children }) => {
     const [searchResult, setSearchResult] = useState({});
     const [loading, setLoading] = useState(false);
     const [notFound, setNotFound] = useState(false);
+    const [selectedCity, setSelectedCity] = useState({});
 
     return (
         <SearchContext.Provider value={{searchQuery, setSearchQuery, loading, setLoading, searchResult, setSearchResult, notFound, setNotFound}}>
