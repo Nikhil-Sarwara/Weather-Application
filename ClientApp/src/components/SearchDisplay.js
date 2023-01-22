@@ -1,6 +1,7 @@
 import {Component} from "react";
 import {Flex, Text} from "@chakra-ui/react";
 import {CityBox} from "./CityBox";
+import {CityDetail} from "./CityDetail";
 
 export class SearchDisplay extends Component {
 
@@ -12,8 +13,6 @@ export class SearchDisplay extends Component {
     }
 
     setCity = (city) => {
-        // print selected city
-        console.log(city)
         this.setState({displayText: "None", onClickCity: city, displayCleanUI: true});
     }
 
@@ -22,15 +21,8 @@ export class SearchDisplay extends Component {
             <Flex height={"100%"} width={"100%"} bgColor={"gray.700"} marginTop={"2rem"}
                   rounded={"3xl"} overflow={"auto"}>
                 {this.state.displayCleanUI ? (
-                        <Flex padding={"1rem"} color={"white"}>
-                            <Text fontSize={"3rem"} fontWeight={"bold"}>Clean UI</Text>
-
-                            {/* Display City Name*/}
-                            <Text>
-                                {
-                                    this.state.onClickCity && this.state.onClickCity.name
-                                }
-                            </Text>
+                        <Flex color={"white"} width={"100%"} height={"100%"}>
+                            <CityDetail city={this.state.onClickCity}/> 
                         </Flex>
                     ) :
                     (
